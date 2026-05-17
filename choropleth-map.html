@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adelaide House Prices Choropleth</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="app-shell">
+        <div class="topbar">
+            <h1>Adelaide House Prices Choropleth</h1>
+            <div class="controls">
+                <div class="control-group">
+                    <label for="startDateSelect">Start Date</label>
+                    <select id="startDateSelect" title="Quarter Ending"></select>
+                </div>
+                <div class="control-group">
+                    <label for="endDateSelect">End Date</label>
+                    <select id="endDateSelect" title="Quarter Ending"></select>
+                </div>
+                <div class="control-group">
+                    <label for="suburbSearch">Search Suburb</label>
+                    <input id="suburbSearch" list="suburbList" placeholder="Type suburb name" autocomplete="off" />
+                    <datalist id="suburbList"></datalist>
+                </div>
+                <div class="control-group">
+                    <label>&nbsp;</label>
+                    <button id="updateMapButton">Update Map</button>
+                </div>
+            </div>
+            <div id="statusBanner">Loading compressed GeoJSON data...</div>
+        </div>
+
+        <div class="map-container">
+            <div id="map"></div>
+            <div class="side-panel">
+                <h2>Legend</h2>
+                <p style="margin: 0 0 10px; font-size: 13px; color: #4a4a4a;">Percentage change in median price from selected start to end quarters.</p>
+                <div class="legend" id="legend"></div>
+                <div style="margin-top: 14px; font-size: 13px; color: #3a3a3a; line-height: 1.55;">
+                    <strong>Tip:</strong> select a suburb in the search box and press Enter or click outside to pan the map.
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">Data is loaded locally from <code>adelaide_property_data.geojson.gz</code> and decompressed in the browser using Pako. All processing is done client-side.</div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pako/2.1.0/pako.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>

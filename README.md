@@ -13,7 +13,7 @@ Map house prices and sales over time for suburbs in metropolitan Adelaide, South
 1. Fetches suburb and sales data from the [South Australian Government](https://data.sa.gov.au) 
 2. Cleans, consolidates, and joins the data.
 3. (Optional) generates an internal map visualisation within the notebook environment.
-4. (Optional) generates a compressed GeoJSON file for use by the HTML and JS files.
+4. (Optional) generates a compressed GeoJSON file for use by the HTML/JS Suite.
 
 ## Data
 There is no sales volume data until 2022.
